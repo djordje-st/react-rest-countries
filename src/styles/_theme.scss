@@ -1,0 +1,53 @@
+.light {
+  background-color: $light;
+
+  a,
+  h1,
+  h2,
+  p,
+  div,
+  button,
+  strong {
+    color: $lightText;
+  }
+
+  .country,
+  select,
+  input {
+    color: $lightText;
+    background-color: $darkText;
+  }
+
+  input::placeholder {
+    color: $lightText;
+  }
+}
+
+.dark {
+  background-color: $dark;
+
+  a,
+  h1,
+  h2,
+  p,
+  div,
+  button,
+  strong {
+    color: $darkText;
+  }
+
+  .country,
+  select,
+  input {
+    color: $darkText;
+    background-color: $darkBg;
+  }
+
+  input::placeholder {
+    color: $darkText;
+  }
+
+  img {
+    filter: saturate(85%);
+  }
+}
