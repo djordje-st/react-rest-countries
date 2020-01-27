@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import countries from 'i18n-iso-countries'
+
 import { getCountry } from '../services/countryApi'
 
 const Country = () => {
@@ -14,6 +16,8 @@ const Country = () => {
       })
     }
     getCountryPage()
+
+    countries.registerLocale(require('i18n-iso-countries/langs/en.json'))
   }, [id])
 
   let languages = []
@@ -23,11 +27,14 @@ const Country = () => {
   if (country.languages !== undefined) {
     languages = country.languages.map(language => language.name)
     currencies = country.currencies.map(currency => currency.name)
-    borders = country.borders.map(border => (
-      <Link key={border} to={'/' + border}>
-        {border}
-      </Link>
-    ))
+    borders = country.borders.map(border => {
+      const borderName = countries.getName(border, 'en')
+      return (
+        <Link key={border} to={'/' + border}>
+          {borderName}
+        </Link>
+      )
+    })
   }
 
   return (
