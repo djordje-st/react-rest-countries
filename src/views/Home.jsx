@@ -57,8 +57,8 @@ const Home = () => {
           <h2>No countries found.</h2>
         </div>
       ) : (
-        <div className="home__countries">{countryList}</div>
-      )}
+          <div className="home__countries">{countryList}</div>
+        )}
     </div>
   )
 }

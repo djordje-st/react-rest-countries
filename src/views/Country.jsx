@@ -45,9 +45,9 @@ const Country = () => {
         <Link to="/">&larr; Back</Link>
       </button>
 
-      <Helmet>
+      {country && <Helmet>
         <title>{`${country.name} | REST Countries`}</title>
-      </Helmet>
+      </Helmet>}
 
       <div className="countryPage__wrapper">
         <img className="countryPage__flag" src={country.flag} alt={country.name} />
