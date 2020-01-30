@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import { Helmet } from 'react-helmet'
+
 import countries from 'i18n-iso-countries'
 
 import { getCountry } from '../services/countryApi'
@@ -42,6 +44,10 @@ const Country = () => {
       <button type="button">
         <Link to="/">&larr; Back</Link>
       </button>
+
+      <Helmet>
+        <title>{`${country.name} | REST Countries`}</title>
+      </Helmet>
 
       <div className="countryPage__wrapper">
         <img className="countryPage__flag" src={country.flag} alt={country.name} />

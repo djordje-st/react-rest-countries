@@ -5,6 +5,7 @@ import { getAllCountries, getRegionCountries } from '../services/countryApi'
 import CountryCard from '../components/CountryCard'
 import Select from '../components/Select'
 import Search from '../components/Search'
+import Helmet from 'react-helmet'
 
 const Home = () => {
   const [countries, setCountries] = useState([])
@@ -43,6 +44,10 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>REST Countries</title>
+      </Helmet>
+
       <div className="home__utils">
         <Search handleChange={search} />
         <Select handleChange={getRegion} />
